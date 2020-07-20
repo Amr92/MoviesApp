@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.PopularMoviesDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/similar_details_toolbar"
+            layout="@layout/movies_bar_layout"/>
+
+        <ImageView
+            android:id="@+id/similar_detail_movies_cover"
+            android:layout_width="match_parent"
+            android:layout_height="245dp"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/similar_details_toolbar"/>
+
+        <ImageView
+            android:id="@+id/similar_detail_movies_img"
+            android:layout_width="125dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="24dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="180dp"/>
+
+        <TextView
+            android:id="@+id/similar_detail_movies_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/similar_detail_movies_cover"
+            android:layout_toRightOf="@id/similar_detail_movies_img"
+            android:maxLines="3"/>
+
+        <TextView
+            android:id="@+id/similar_detail_movie_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:textSize="20sp"
+            android:maxLines="5"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_below="@id/similar_detail_movies_img" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton_similar_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_play_arrow"
+            android:layout_marginTop="140dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:id="@+id/similar_movies_view_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/background_light"
+            android:layout_below="@id/similar_detail_movie_overview"
+            android:layout_marginVertical="16dp"/>
+
+        <Button
+            android:id="@+id/similar_detail_watchlist_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/similar_movies_view_1"
+            android:layout_marginHorizontal="24dp"
+            android:text="Add to Watchlist"
+            android:background="@drawable/button"/>
+
+        <View
+            android:id="@+id/similar_detail_view_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/similar_detail_watchlist_button"
+            android:layout_marginVertical="16dp"
+            android:background="@android:color/background_light"/>
+
+        <LinearLayout
+            android:id="@+id/similar_detail_linear_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/similar_detail_view_2"
+            android:orientation="vertical">
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="1"
+                    android:maxHeight="30dp"
+                    android:maxWidth="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ratingbar_full_star"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/similar_detail_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_light"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/acme"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/similar_detail_vote_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/background_light"/>
+
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/similar_movies_details_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="32dp"
+            android:layout_below="@id/similar_detail_linear_rate"
+            app:cardBackgroundColor="#222831">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/similar_movies_details_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Details"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24sp"
+                    android:layout_marginTop="16dp"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Release Date"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/similar_detail_release_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Homepage"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/similar_detail_Home_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Language Spoken"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/similar_detail_language_spoken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Runtime"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/similar_detail_runtime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</ScrollView>

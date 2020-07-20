@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.VideoPlay">
+
+    <RelativeLayout
+        android:id="@+id/video_player_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.codewaves.youtubethumbnailview.ThumbnailView
+            android:id="@+id/video_thumbnail_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:youtube_timeVisible="false"
+            app:youtube_titleVisible="false"
+            android:transitionName="video_transition">
+
+            <ProgressBar
+                android:id="@+id/video_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+
+        </com.codewaves.youtubethumbnailview.ThumbnailView>
+        
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/video_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/video_player_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/video_player_layout"
+        android:fontFamily="@font/acme"
+        android:padding="15dp"
+        android:textSize="17sp"
+        android:textColor="@android:color/background_light"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/other_videos_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/video_player_title"
+        android:layout_margin="16dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_results_found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More Videos Are Not Found..."
+        android:layout_below="@id/video_player_title"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="70dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

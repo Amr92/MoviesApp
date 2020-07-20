@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+  <TextView
+      android:id="@+id/genres_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="hi you"
+      android:background="@drawable/round_cover"
+      android:textSize="20sp"
+      android:textColor="@android:color/background_light"
+      android:layout_marginHorizontal="16dp"
+      android:paddingHorizontal="8dp"
+      android:paddingVertical="8dp"/>
+
+</LinearLayout>
